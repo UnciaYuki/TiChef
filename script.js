@@ -23,8 +23,8 @@ fetch('data.json')
         });
     })
 // Rôle : Afficher un produit dans la page HTML sous forme de carte
-// Paramètre : "product",  un objet représentant un produit contenant les informations du produit
-// Retour : Cette fonction ne retourne rien (elle effectue des manipulations DOM)
+// Paramètre : "recette",  un objet représentant un produit contenant les informations du produit
+// Retour : Cette fonction ne retourne rien 
 
 function affiche(recette) {
     let nom = recette.nom
@@ -32,20 +32,57 @@ function affiche(recette) {
     let difficulte = recette.difficulte
     let prepa = recette.tempPreparation
     let cuisson = recette.tempCuisson
-    let portion  = recette.portions
+    let portion = recette.portions
     let ingr = recette.ingredients
     let saison = recette.saison
+    let ingredients = recette.ingredients
+    let ingre = ""
+    let étapes = ""
 
-    let ingredients= recette.ingredients
     ingredients.forEach(ing => {
         let quantite = ing.quantite
         let unite = ing.unite
         let aliment = ing.aliment
-    })
+        ingre += `<li>${quantite} ${unite} ${aliment}</li>`
+    });
 
-    let etapes= recette.etapes
-    etapes.forEach(steps=> {
+    let etapes = recette.etapes
+    etapes.forEach(steps => {
         let etape = steps.numeroEtape
         let desc = steps.descEtape
-    })
+        étapes += `<li>${desc}</li>`
+    });
+
+
+    document.querySelector(".Recette").innerHTML +=
+        `
+<h2>${saison}</h2>
+            <div class="card margin">
+                <div class="flex margin30">
+                <h3>${nom}</h3>
+                <ul class="flex spaceBetween w60 ">
+                    <li><span>Difficulté: </span> ${difficulte}</li>
+                    <li><span>Portion: </span>${portion}</li>
+                    <li><span>Temps de préparation: </span>${prepa}</li>
+                    <li><span>Temps de cuisson: </span>${cuisson}</li>
+                </ul>
+                </div>
+                <div class= "flex spaceBetween">
+                    <div class="w30">
+                        <h4>Ingrédients</h4>
+                        <ul>
+                            ${ingre}
+                        </ul>
+                    </div>
+                <div class="w30">
+                    <h4>Etapes</h4>
+                    <ol>
+                        ${étapes}
+                    </ol>
+                </div>
+                <div class="w30">
+                    <img src="${image}" alt="">
+                </div>
+            </div>
+`
 }

@@ -3,4 +3,109 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Inter";
+    font-size: 14px;
+    color: #393939
 }
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    width: 100%;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    width: 300px;
+    object-fit: contain;
+    border-radius: 42px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.spaceBetween {
+    justify-content: space-between;
+}
+
+.spaceEvenly {
+    justify-content: space-evenly;
+}
+
+/* Les titres */
+
+h2 {
+    color: #FF6F61;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+h3 {
+    color: #FF6F61;
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    width: 100%;
+}
+
+h4 {
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+
+}
+
+.center {
+    justify-content: center;
+}
+
+.w30 {
+    width: 30%;
+}
+
+
+.w60 {
+    width:60%;
+}
+
+
+.margin {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.margin20 {
+    margin: 20px;
+}
+
+.margin30 {
+    margin: 30px;
+}
+/* Section */
+
+.paddingSection {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+/* Card */
+
+.card {
+    width: 100%;
+    height: auto;
+    border-radius: 19px;
+    border: 1px;
+    box-shadow: 0px 0px 4px 0px #828282B5;
+}
+
